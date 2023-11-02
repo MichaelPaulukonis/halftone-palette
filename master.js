@@ -1439,7 +1439,7 @@ class Output {
             }
         }
         export_context.putImageData(export_imagedata, 0, 0);
-        window.open(export_canvas.toDataURL("image/png"), "_blank").focus();
+        export_context.canvas.toBlob((blob) => saveAs(blob, `halftone.${datestring()}.png`))
     }
 
 }
